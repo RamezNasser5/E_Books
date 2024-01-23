@@ -1,3 +1,4 @@
+import 'package:e_books/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class SplachViewBody extends StatelessWidget {
@@ -6,7 +7,13 @@ class SplachViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image.asset(AssetData().logo),
+        ],
+      ),
     );
   }
 }

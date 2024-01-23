@@ -1,3 +1,4 @@
+import 'package:e_books/consts.dart';
 import 'package:e_books/features/Splach/presentation/views/splach_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,8 +12,10 @@ class EBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      home: SplachView(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData().copyWith(scaffoldBackgroundColor: kPrimaryColor),
+      home: const SplachView(),
     );
   }
 }
