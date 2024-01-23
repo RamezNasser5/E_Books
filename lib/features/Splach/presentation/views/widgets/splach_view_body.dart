@@ -56,7 +56,6 @@ class _SplachViewBodyState extends State<SplachViewBody>
         Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
             .animate(animationController);
 
-    // Start the animation when the widget is first built
     animationController.forward();
   }
 
