@@ -8,12 +8,16 @@ class CustomBooksItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.7 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: AssetImage(
-              AssetData().testImage,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.red,
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage(
+                AssetData().testImage,
+              ),
             ),
           ),
         ),

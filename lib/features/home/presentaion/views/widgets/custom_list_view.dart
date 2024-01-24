@@ -8,14 +8,11 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: ((context, index) {
-            return const CustomBooksItem();
-          }),
-        ),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: ((context, index) {
+          return const CustomBooksItem();
+        }),
       ),
     );
   }
