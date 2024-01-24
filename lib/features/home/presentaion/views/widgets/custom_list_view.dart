@@ -1,4 +1,4 @@
-import 'package:e_books/core/utils/assets.dart';
+import 'package:e_books/features/home/presentaion/views/widgets/custom_books_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomListView extends StatelessWidget {
@@ -8,17 +8,13 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
-      child: AspectRatio(
-        aspectRatio: 2.7 / 4,
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(
-                AssetData().testImage,
-              ),
-            ),
-          ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: ((context, index) {
+            return const CustomBooksItem();
+          }),
         ),
       ),
     );
