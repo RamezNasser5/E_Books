@@ -2,6 +2,7 @@ import 'package:e_books/consts.dart';
 import 'package:e_books/core/utils/assets.dart';
 import 'package:e_books/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBestSellerItem extends StatelessWidget {
   const CustomBestSellerItem({super.key});
@@ -52,32 +53,30 @@ class CustomBestSellerItem extends StatelessWidget {
               const SizedBox(
                 height: 6,
               ),
-              const Row(
+              Row(
                 children: [
-                  Text(
-                    '19.99 €',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
-                  SizedBox(
+                  Text('19.99 €',
+                      style: Styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold)),
+                  const SizedBox(
                     width: 36,
                   ),
-                  Icon(
-                    Icons.star,
+                  const Icon(
+                    FontAwesomeIcons.solidStar,
                     color: Colors.yellowAccent,
+                    size: 20,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
-                  Text(
+                  const Text(
                     '4.8',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
+                    style: Styles.textStyle20,
                   ),
-                  Text(
+                  const SizedBox(
+                    width: 12,
+                  ),
+                  const Text(
                     '(23456)',
                     style: TextStyle(
                       fontSize: 18,
