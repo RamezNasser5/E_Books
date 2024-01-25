@@ -1,4 +1,6 @@
+import 'package:e_books/consts.dart';
 import 'package:e_books/core/utils/assets.dart';
+import 'package:e_books/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomBestSellerItem extends StatelessWidget {
@@ -27,26 +29,30 @@ class CustomBestSellerItem extends StatelessWidget {
               ),
             ),
           ),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Harry Potter and the Goblet of Fire',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'Poppins',
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(
+                  'Harry Potter and the Goblet of Fire',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.textStyle24.copyWith(
+                    fontFamily: kGTSectraFine,
+                  ),
                 ),
               ),
-              Text(
+              const Text(
                 'J.K. Rowling',
                 style: TextStyle(
                   fontSize: 14,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 6,
               ),
-              Row(
+              const Row(
                 children: [
                   Text(
                     '19.99 €',
