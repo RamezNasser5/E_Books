@@ -9,6 +9,7 @@ class CustomListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemBuilder: ((context, index) {
           return const CustomBooksItem();

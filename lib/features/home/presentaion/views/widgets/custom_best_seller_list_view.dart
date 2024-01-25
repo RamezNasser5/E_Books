@@ -6,11 +6,17 @@ class CustomBestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(itemBuilder: ((context, index) {
-        return const CustomBestSellerItem();
-      })),
+    return ListView.builder(
+      shrinkWrap: true,
+      padding: EdgeInsets.zero,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 10,
+      itemBuilder: ((context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(vertical: 10.0),
+          child: CustomBestSellerItem(),
+        );
+      }),
     );
   }
 }
