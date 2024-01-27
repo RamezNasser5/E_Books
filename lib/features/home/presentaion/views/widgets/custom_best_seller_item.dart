@@ -2,8 +2,8 @@ import 'package:e_books/consts.dart';
 import 'package:e_books/core/utils/app_router.dart';
 import 'package:e_books/core/utils/assets.dart';
 import 'package:e_books/core/utils/styles.dart';
+import 'package:e_books/features/home/presentaion/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBestSellerItem extends StatelessWidget {
@@ -67,27 +67,7 @@ class CustomBestSellerItem extends StatelessWidget {
                     const SizedBox(
                       width: 36,
                     ),
-                    const Icon(
-                      FontAwesomeIcons.solidStar,
-                      color: Colors.yellowAccent,
-                      size: 20,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    const Text(
-                      '4.8',
-                      style: Styles.textStyle20,
-                    ),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    const Text(
-                      '(23456)',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    )
+                    const CustomRating()
                   ],
                 ),
               ],

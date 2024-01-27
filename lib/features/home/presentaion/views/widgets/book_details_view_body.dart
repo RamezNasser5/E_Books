@@ -1,6 +1,7 @@
 import 'package:e_books/core/utils/styles.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_book_details_app_bar.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_books_item.dart';
+import 'package:e_books/features/home/presentaion/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -26,15 +27,16 @@ class BookDetailsViewBody extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          const SizedBox(
-            height: 6,
-          ),
           Text(
             'Rudyard Kipling',
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
             ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 140.0, top: 14),
+            child: CustomRating(),
           ),
         ],
       ),
