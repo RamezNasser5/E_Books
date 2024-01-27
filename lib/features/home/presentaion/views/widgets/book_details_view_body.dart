@@ -3,6 +3,7 @@ import 'package:e_books/features/home/presentaion/views/widgets/books_action.dar
 import 'package:e_books/features/home/presentaion/views/widgets/custom_book_details_app_bar.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_books_item.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_rating.dart';
+import 'package:e_books/features/home/presentaion/views/widgets/similar_custom_book_list._view.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -46,6 +47,19 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
             child: BooksAtion(),
           ),
+          Padding(
+            padding: const EdgeInsets.only(
+              right: 200.0,
+              top: 20,
+            ),
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle20.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          const SimilarBooksListView()
         ],
       ),
     );
