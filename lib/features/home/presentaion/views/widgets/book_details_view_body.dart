@@ -1,4 +1,5 @@
 import 'package:e_books/core/utils/styles.dart';
+import 'package:e_books/features/home/presentaion/views/widgets/books_action.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_book_details_app_bar.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_books_item.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_rating.dart';
@@ -37,6 +38,13 @@ class BookDetailsViewBody extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(left: 140.0, top: 14),
             child: CustomRating(),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 30,
+            ),
+            child: BooksAtion(),
           ),
         ],
       ),

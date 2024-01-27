@@ -12,7 +12,7 @@ class CustomRating extends StatelessWidget {
         Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.yellowAccent,
-          size: 20,
+          size: 16,
         ),
         SizedBox(
           width: 20,
