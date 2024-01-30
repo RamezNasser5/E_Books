@@ -23,7 +23,7 @@ class EBook extends StatelessWidget {
         BlocProvider(
           create: (context) => FeaturedBookCubit(
             getit.get<HomeRepoImpl>(),
-          ),
+          )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
