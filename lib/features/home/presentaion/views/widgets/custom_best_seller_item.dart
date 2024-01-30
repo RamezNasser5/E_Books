@@ -1,13 +1,16 @@
 import 'package:e_books/consts.dart';
 import 'package:e_books/core/utils/app_router.dart';
-import 'package:e_books/core/utils/assets.dart';
 import 'package:e_books/core/utils/styles.dart';
+import 'package:e_books/features/home/data/models/book_model/book_model.dart';
+import 'package:e_books/features/home/presentaion/views/widgets/custom_books_item.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBestSellerItem extends StatelessWidget {
-  const CustomBestSellerItem({super.key});
+  const CustomBestSellerItem({super.key, required this.bookModel});
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,23 +22,13 @@ class CustomBestSellerItem extends StatelessWidget {
         },
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 3.4 / 4,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.red,
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(
-                        AssetData().testImage,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            const SizedBox(
+              width: 20,
+            ),
+            CustomBooksItem(
+                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+            const SizedBox(
+              width: 30,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +36,7 @@ class CustomBestSellerItem extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Text(
-                    'Harry Potter and the Goblet of Fire',
+                    bookModel.volumeInfo.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle24.copyWith(
@@ -51,9 +44,9 @@ class CustomBestSellerItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text(
-                  'J.K. Rowling',
-                  style: TextStyle(
+                Text(
+                  bookModel.volumeInfo.authors![0],
+                  style: const TextStyle(
                     fontSize: 14,
                   ),
                 ),
@@ -62,13 +55,16 @@ class CustomBestSellerItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Text('19.99 €',
+                    Text('Free',
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold)),
                     const SizedBox(
                       width: 36,
                     ),
-                    const CustomRating()
+                    CustomRating(
+                      rating: bookModel.volumeInfo.averageRating ?? 0,
+                      count: bookModel.volumeInfo.ratingsCount ?? 0,
+                    )
                   ],
                 ),
               ],

@@ -39,7 +39,10 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         const Padding(
           padding: EdgeInsets.only(left: 140.0, top: 14),
-          child: CustomRating(),
+          child: CustomRating(
+            rating: 5,
+            count: 23456,
+          ),
         ),
         const Padding(
           padding: EdgeInsets.symmetric(

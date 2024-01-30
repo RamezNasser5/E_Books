@@ -3,30 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomRating extends StatelessWidget {
-  const CustomRating({super.key});
+  const CustomRating({super.key, required this.rating, required this.count});
+
+  final int rating;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Icon(
+        const Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.yellowAccent,
           size: 16,
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
         Text(
-          '4.8',
+          '$rating',
           style: Styles.textStyle20,
         ),
-        SizedBox(
+        const SizedBox(
           width: 12,
         ),
         Text(
-          '(23456)',
-          style: TextStyle(
+          '($count)',
+          style: const TextStyle(
             fontSize: 18,
           ),
         )

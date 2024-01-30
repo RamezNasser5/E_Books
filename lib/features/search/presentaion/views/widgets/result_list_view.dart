@@ -1,4 +1,3 @@
-import 'package:e_books/features/home/presentaion/views/widgets/custom_best_seller_item.dart';
 import 'package:flutter/material.dart';
 
 class ResultSearchListView extends StatelessWidget {
@@ -14,7 +13,10 @@ class ResultSearchListView extends StatelessWidget {
       itemBuilder: ((context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10.0),
-          child: CustomBestSellerItem(),
+          // child: CustomBestSellerItem(
+          //   urlImage: '',
+          // ),
+          child: Text('data'),
         );
       }),
     );

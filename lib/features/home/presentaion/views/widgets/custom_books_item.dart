@@ -14,7 +14,7 @@ class CustomBooksItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(24),
       child: AspectRatio(
-        aspectRatio: 2.7 / 4,
+        aspectRatio: 2.9 / 4,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: CachedNetworkImage(
