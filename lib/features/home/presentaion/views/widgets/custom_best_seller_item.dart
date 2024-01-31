@@ -18,7 +18,8 @@ class CustomBestSellerItem extends StatelessWidget {
       height: 125,
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouter.kBooksDetailsView);
+          GoRouter.of(context)
+              .push(AppRouter.kBooksDetailsView, extra: bookModel);
         },
         child: Row(
           children: [
