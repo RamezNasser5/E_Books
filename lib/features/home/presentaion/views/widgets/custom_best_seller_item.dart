@@ -26,7 +26,7 @@ class CustomBestSellerItem extends StatelessWidget {
               width: 20,
             ),
             CustomBooksItem(
-                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? ''),
             const SizedBox(
               width: 30,
             ),
@@ -36,7 +36,7 @@ class CustomBestSellerItem extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Text(
-                    bookModel.volumeInfo.title!,
+                    bookModel.volumeInfo?.title ?? 'Title Not Available',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle24.copyWith(
@@ -45,7 +45,7 @@ class CustomBestSellerItem extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  bookModel.volumeInfo.authors![0],
+                  bookModel.volumeInfo?.authors![0] ?? 'Auther Not Available',
                   style: const TextStyle(
                     fontSize: 14,
                   ),
@@ -62,8 +62,8 @@ class CustomBestSellerItem extends StatelessWidget {
                       width: 36,
                     ),
                     CustomRating(
-                      rating: bookModel.volumeInfo.averageRating ?? 0,
-                      count: bookModel.volumeInfo.ratingsCount ?? 0,
+                      rating: bookModel.volumeInfo?.averageRating?.round() ?? 0,
+                      count: bookModel.volumeInfo?.ratingsCount ?? 0,
                     )
                   ],
                 ),
