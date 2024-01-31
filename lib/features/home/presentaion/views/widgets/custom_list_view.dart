@@ -21,9 +21,7 @@ class CustomListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: ((context, index) {
                 return CustomBooksItem(
-                  imageUrl:
-                      state.books[index].volumeInfo?.imageLinks?.thumbnail ??
-                          '',
+                  bookModel: state.books[index],
                 );
               }),
             ),

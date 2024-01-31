@@ -20,9 +20,7 @@ class BooksDetailsSection extends StatelessWidget {
         const CustomBookDetailsAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.28),
-          child: CustomBooksItem(
-            imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
-          ),
+          child: CustomBooksItem(bookModel: bookModel),
         ),
         const SizedBox(
           height: 50,
@@ -32,6 +30,7 @@ class BooksDetailsSection extends StatelessWidget {
           style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.w700,
           ),
+          textAlign: TextAlign.center,
         ),
         Text(
           bookModel.volumeInfo?.authors?[0] ?? 'Title Not Found',
