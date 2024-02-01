@@ -1,7 +1,9 @@
 import 'package:e_books/core/utils/styles.dart';
+import 'package:e_books/features/search/presentaion/view_models/cubit/search_cubit.dart';
 import 'package:e_books/features/search/presentaion/views/widgets/custom_text_field.dart';
 import 'package:e_books/features/search/presentaion/views/widgets/result_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -21,7 +23,10 @@ class SearchViewBody extends StatelessWidget {
             children: [
               CustomTextField(
                 productName: 'Search',
-                onChange: (data) {},
+                onChange: (data) {
+                  BlocProvider.of<SearchCubit>(context)
+                      .fetchResultBooks(category: data);
+                },
               ),
               const SizedBox(
                 height: 20,

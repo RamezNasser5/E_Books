@@ -5,6 +5,8 @@ import 'package:e_books/features/home/presentaion/manager/similar_books_cubit/si
 import 'package:e_books/features/home/presentaion/views/book_details_view.dart';
 import 'package:e_books/features/Splach/presentation/views/splach_view.dart';
 import 'package:e_books/features/home/presentaion/views/home_view.dart';
+import 'package:e_books/features/search/data/repo/search_repo_Impl.dart';
+import 'package:e_books/features/search/presentaion/view_models/cubit/search_cubit.dart';
 import 'package:e_books/features/search/presentaion/views/search_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -34,7 +36,9 @@ abstract class AppRouter {
     ),
     GoRoute(
       path: kSearchView,
-      builder: (context, state) => const SearchView(),
+      builder: (context, state) => BlocProvider(
+          create: (context) => SearchCubit(getit.get<SearchRepoImpl>()),
+          child: const SearchView()),
     ),
   ]);
 }

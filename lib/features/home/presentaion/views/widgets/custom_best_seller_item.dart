@@ -15,7 +15,7 @@ class CustomBestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 125,
+      height: 140,
       child: GestureDetector(
         onTap: () {
           GoRouter.of(context)
@@ -24,11 +24,11 @@ class CustomBestSellerItem extends StatelessWidget {
         child: Row(
           children: [
             const SizedBox(
-              width: 20,
+              width: 10,
             ),
             CustomBooksItem(bookModel: bookModel),
             const SizedBox(
-              width: 30,
+              width: 20,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,14 +44,14 @@ class CustomBestSellerItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
-                  bookModel.volumeInfo?.authors![0] ?? 'Auther Not Available',
-                  style: const TextStyle(
-                    fontSize: 14,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: Text(
+                    bookModel.volumeInfo?.authors?[0] ?? 'Auther Not Available',
+                    style: const TextStyle(
+                      fontSize: 14,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 6,
                 ),
                 Row(
                   children: [
