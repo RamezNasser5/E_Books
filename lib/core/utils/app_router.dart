@@ -1,5 +1,5 @@
 import 'package:e_books/core/utils/services_located.dart';
-import 'package:e_books/features/home/data/models/book_model/book_model.dart';
+import 'package:e_books/core/models/book_model/book_model.dart';
 import 'package:e_books/features/home/data/repos/home_repo_impl.dart';
 import 'package:e_books/features/home/presentaion/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:e_books/features/home/presentaion/views/book_details_view.dart';

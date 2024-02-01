@@ -1,5 +1,5 @@
 import 'package:e_books/core/utils/styles.dart';
-import 'package:e_books/features/home/data/models/book_model/book_model.dart';
+import 'package:e_books/core/models/book_model/book_model.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/books_action.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_book_details_app_bar.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_books_item.dart';
@@ -46,12 +46,14 @@ class BooksDetailsSection extends StatelessWidget {
             count: bookModel.volumeInfo?.ratingsCount ?? 0,
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(
+        Padding(
+          padding: const EdgeInsets.symmetric(
             horizontal: 20,
             vertical: 30,
           ),
-          child: BooksAtion(),
+          child: BooksAtion(
+            bookModel: bookModel,
+          ),
         ),
       ],
     );

@@ -1,4 +1,4 @@
-import 'package:e_books/features/home/data/models/book_model/book_model.dart';
+import 'package:e_books/core/models/book_model/book_model.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/books_details_section.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'package:e_books/consts.dart';
 import 'package:e_books/core/utils/app_router.dart';
 import 'package:e_books/core/utils/styles.dart';
-import 'package:e_books/features/home/data/models/book_model/book_model.dart';
+import 'package:e_books/core/models/book_model/book_model.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_books_item.dart';
 import 'package:e_books/features/home/presentaion/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
