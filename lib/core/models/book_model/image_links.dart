@@ -6,10 +6,18 @@ class ImageLinks extends Equatable {
 
   const ImageLinks({this.smallThumbnail, required this.thumbnail});
 
-  factory ImageLinks.fromJson(Map<String, dynamic> json) => ImageLinks(
+  factory ImageLinks.fromJson(Map<String, dynamic>? json) {
+    if (json == null) {
+      // Handle the case when 'imageLinks' is null.
+      return const ImageLinks(
+          smallThumbnail: null, thumbnail: ''); // or provide default values
+    } else {
+      return ImageLinks(
         smallThumbnail: json['smallThumbnail'] as String?,
         thumbnail: json['thumbnail'] as String,
       );
+    }
+  }
 
   Map<String, dynamic> toJson() => {
         'smallThumbnail': smallThumbnail,
@@ -19,3 +27,6 @@ class ImageLinks extends Equatable {
   @override
   List<Object?> get props => [smallThumbnail, thumbnail];
 }
+
+// Example usage:
+// imageLinks: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),

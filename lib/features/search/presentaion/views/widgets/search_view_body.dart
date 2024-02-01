@@ -24,8 +24,13 @@ class SearchViewBody extends StatelessWidget {
               CustomTextField(
                 productName: 'Search',
                 onChange: (data) {
-                  BlocProvider.of<SearchCubit>(context)
-                      .fetchResultBooks(category: data);
+                  if (data == '') {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Entre Your Category')));
+                  } else {
+                    BlocProvider.of<SearchCubit>(context)
+                        .fetchResultBooks(category: data);
+                  }
                 },
               ),
               const SizedBox(
